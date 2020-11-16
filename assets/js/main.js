@@ -52,13 +52,7 @@ const manyRunde = () => {
             roundMin.innerHTML = mall++;
 
         }
-        // if (i >= valuee - 1) {
-        //     i++
-            
-        // } else {
-        //     i++
-        // }
-        // form.innerHTML = `<h2>${i}/${valuee}</h2>`
+        
         usernumber=number.value
         
         
