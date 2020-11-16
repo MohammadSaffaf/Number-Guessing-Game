@@ -3,6 +3,14 @@ let roundMin=document.getElementById('rounds-min')
 let roundsMax=document.getElementById('rounds-max')
 let number=document.getElementById('number')
 let result=document.getElementById('result')
+let text = document.getElementById('text')
+mall = 0
+x = Math.floor(Math.random() * 100 ) +1;
+let i = 0
+let form = document.getElementById('show')
+ 
+
+
 const manyRunde = () => {
     let round4 = document.getElementById("four");
    let round5 = document.getElementById("five");
@@ -28,14 +36,52 @@ const manyRunde = () => {
          }
          return valuee;
        }
+       
+       result.addEventListener("click" , () =>{
+           
+        //    let mall = 0
+        
+        // number.value= text.innerHTML
+        
+        console.log(x);
+        roundsMax.innerHTML = manyRunde();
+        ++mall;
+        if (mall < manyRunde()) {
+            roundMin.innerHTML = mall;
+        } else if (mall <= manyRunde()) {
+            roundMin.innerHTML = mall++;
+
+        }
+        // if (i >= valuee - 1) {
+        //     i++
+            
+        // } else {
+        //     i++
+        // }
+        // form.innerHTML = `<h2>${i}/${valuee}</h2>`
+        usernumber=number.value
+        
+        
+        if (usernumber== x) {
+            text.innerHTML += `<h3>Congratulatios! You won after  rounds. <a href="index.html">Play again!</a></h3>`
+        }else if (usernumber  <  x) {
+            text.innerHTML += `<h3> You need to guess higher than </h3>`
+        }else if (usernumber > x) {
+            text.innerHTML += `<h3> You need to guess lower than </h3>`
+        }else if (mall >= x) {
+            text.innerHTML += `<h3>Sorry, you lost. Your number was  <a href="index.html">Play again!</a></h3>`}
+
+})
     //    x = Math.floor(Math.random() * 100);
     //    console.log(x);
-    result.addEventListener("click" , () =>{
-           x = Math.floor(Math.random() * 100);
-       console.log(x);
-       for (let index = 0; index <= manyRunde(); index++) {
-        //    console.log(index);
-           roundMin.innerHTML = index++;
-       }
-    })
+    // {
+    //        x = Math.floor(Math.random() * 100);
+    //    console.log(x);
+       
+    //    for (let index = 1; index <= manyRunde(); index++) {
+    //     //    console.log(index);
+    //        roundMin.innerHTML = ++index;
+    //    }
+    // })
+    
     
