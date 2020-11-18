@@ -1,6 +1,7 @@
 let roundResult=document.getElementById('rounds-result')
 let roundMin=document.getElementById('rounds-min')
 let roundsMax=document.getElementById('rounds-max')
+let custom_num=document.getElementById('cust-number')
 let number=document.getElementById('number')
 let result=document.getElementById('result')
 let text = document.getElementById('text')
@@ -30,7 +31,7 @@ const manyRunde = () => {
             valuee =0 ;
            number.onkeyup = function () {
             
-               roundsMax.innerHTML=number.value
+               roundsMax.innerHTML=custom_num.value
            }
         
          }
@@ -52,18 +53,20 @@ const manyRunde = () => {
             roundMin.innerHTML = mall++;
 
         }
-        
+        custnumber = custom_num.value
         usernumber=number.value
         
         
-        if (usernumber== x) {
+        if (usernumber == x) {
+            
             text.innerHTML += `<h3>Congratulatios! You won after  rounds. <a href="index.html">Play again!</a></h3>`
-        }else if (usernumber  <  x) {
-            text.innerHTML += `<h3> You need to guess higher than </h3>`
-        }else if (usernumber > x) {
-            text.innerHTML += `<h3> You need to guess lower than </h3>`
-        }else if (mall >= x) {
-            text.innerHTML += `<h3>Sorry, you lost. Your number was  <a href="index.html">Play again!</a></h3>`}
+        } else if (mall >= custnumber) {
+            text.innerHTML += `<h3>Sorry, you lost. Your number was . <a href="index.html">Play again!</a></h3>`
+        } else if (usernumber > x) {
+            text.innerHTML += `<h3>. You need to guess lower than .</h3>`
+        } else {
+            text.innerHTML += `<h3>. You need to guess higher than .</h3>`
+        }
 
 })
     //    x = Math.floor(Math.random() * 100);
