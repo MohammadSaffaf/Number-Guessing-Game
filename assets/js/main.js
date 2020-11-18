@@ -29,7 +29,7 @@ const manyRunde = () => {
            roundsMax.innerHTML=6
          } else if (custom.checked) {
             valuee =0 ;
-           number.onkeyup = function () {
+            custom_num.onkeyup = function () {
             
                roundsMax.innerHTML=custom_num.value
            }
