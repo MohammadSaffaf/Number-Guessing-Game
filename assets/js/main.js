@@ -13,6 +13,7 @@
     function showCustom() {
         if (custom.checked) {
             customRounds.style.display = "inline-block"
+            box.style.display = "none"
         } else {
             customRounds.style.display = "none"
         }

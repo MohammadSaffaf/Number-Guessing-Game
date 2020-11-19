@@ -1,5 +1,77 @@
+/* font-family: 'Black Ops One', cursive;
+font-family: 'Goldman', cursive;
+font-family: 'Monoton', cursive; */
+
 body {
   text-align: center;
   color: white;
   background-color: black;
+  font-family: "Goldman", cursive;
+  font-size: 2rem;
+}
+h1 {
+  font-size: 5rem;
+  font-family: "Monoton", cursive;
+  text-shadow: 8px 8px 8px brown;
+}
+#rounds {
+  display: flex;
+  align-items: center;
+  border: 5px solid brown;
+  flex-direction: column;
+  font-size: 40px;
+  padding: 2%;
+  border-radius: 40px;
+  box-shadow: 10px 10px 10px gray;
+  margin-bottom: 5%;
+  width: 70%;
+  margin-left: 15%;
+}
+.rund {
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 6%;
+}
+.rund2 {
+  width: 70%;
+  margin-left: 25%;
+}
+label {
+  margin-right: 30%;
+}
+#customRounds {
+  width: 20%;
+  height: 4vh;
+  border: 5px solid brown;
+  box-shadow: 10px 10px 10px gray;
+  font-size: 30px;
+}
+#guess {
+  width: 20%;
+  height: 4vh;
+  border: 5px solid brown;
+  box-shadow: 10px 10px 10px gray;
+  font-size: 30px;
+}
+.result-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 3%;
+}
+#start {
+  width: 15%;
+  height: 10vh;
+  border: 5px solid brown;
+  border-radius: 80px;
+  font-size: 30px;
+  margin-top: 2%;
+  font-family: "Goldman", cursive;
+  transition: all 0.5s linear;
+}
+#start:hover {
+  border-radius: 0;
+  font-family: "Black Ops One", cursive;
+  box-shadow: 10px 10px 10px gray;
 }

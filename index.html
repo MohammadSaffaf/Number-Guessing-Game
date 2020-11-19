@@ -6,34 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NumberGuesser</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Goldman:wght@700&family=Monoton&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <h1>Number guessing game: 1-100</h1>
     <article>
         <form action="">
-            <h3>In how many rounds do you think you can guess the number?</h3>
+            <h3>IN HOW MANY ROUNDS DO YOU THINK YOU CAN GUESS THE NUMBER??</h3>
 
             <div id="rounds">
-                <input type="radio" name="rounds" id="four" checked onclick="showCustom()">
-                <label for="">4</label>
-                <input type="radio" name="rounds" id="five" onclick="showCustom()">
-                <label for="">5</label>
+                <div class="rund">
+                    <input type="radio" name="rounds" id="four" checked onclick="showCustom()">
+                    <label for="">4</label>
+                    <input type="radio" name="rounds" id="five" onclick="showCustom()">
+                    <label for="">5</label>
+                </div>
+                <div class="rund2">
+                    <input type="radio" name="rounds" id="six" onclick="showCustom()">
+                    <label for="">6</label>
+                    <input type="radio" name="rounds" id="custom" onclick="showCustom()">
+                    <label for="">custom</label>
+                </div>
 
-                <input type="radio" name="rounds" id="six" onclick="showCustom()">
-                <label for="">6</label>
-                <input type="radio" name="rounds" id="custom" onclick="showCustom()">
-                <label for="">custom</label>
 
-                <input type="number" name="" id="customRounds">
             </div>
+            <input type="number" name="" id="customRounds">
         </form>
     </article>
     <article>
-        <form action="">
+        <form action="" class="result-form">
             <input type="number" name="" id="guess">
-            <input type="button" value="Guess" onclick="game()" id="start">
+            <input type="button" value="RESULT" onclick="game()" id="start">
         </form>
     </article>
     <div id="hints"></div>
