@@ -1,84 +1,58 @@
-let roundResult=document.getElementById('rounds-result')
-let roundMin=document.getElementById('rounds-min')
-let roundsMax=document.getElementById('rounds-max')
-let custom_num=document.getElementById('cust-number')
-let number=document.getElementById('number')
-let result=document.getElementById('result')
-let text = document.getElementById('text')
-mall = 0
-x = Math.floor(Math.random() * 100 ) +1;
-let i = 0
-let form = document.getElementById('show')
- 
 
-
-const manyRunde = () => {
-    let round4 = document.getElementById("four");
-   let round5 = document.getElementById("five");
-   let round6 = document.getElementById("six");
-   let custom = document.getElementById("custom");
-   valuee=0
-       if (round4.checked) {
-           valuee=4
-           roundsMax.innerHTML=4
-       }else if (round5.checked) {
-           valuee = 5;
-           roundsMax.innerHTML=5
-         } else if (round6.checked) {
-           valuee = 6;
-           roundsMax.innerHTML=6
-         } else if (custom.checked) {
-            valuee =0 ;
-            custom_num.onkeyup = function () {
-            
-               roundsMax.innerHTML=custom_num.value
-           }
-        
-         }
-         return valuee;
-       }
-       
-       result.addEventListener("click" , () =>{
-           
-        //    let mall = 0
-        
-        // number.value= text.innerHTML
-        
-        console.log(x);
-        roundsMax.innerHTML = manyRunde();
-        ++mall;
-        if (mall < manyRunde()) {
-            roundMin.innerHTML = mall;
-        } else if (mall <= manyRunde()) {
-            roundMin.innerHTML = mall++;
-
-        }
-        custnumber = custom_num.value
-        usernumber=number.value
-        
-        
-        if (usernumber == x) {
-            
-            text.innerHTML += `<h3>Congratulatios! You won after  rounds. <a href="index.html">Play again!</a></h3>`
-        } else if (mall >= custnumber) {
-            text.innerHTML += `<h3>Sorry, you lost. Your number was . <a href="index.html">Play again!</a></h3>`
-        } else if (usernumber > x) {
-            text.innerHTML += `<h3>. You need to guess lower than .</h3>`
+    const four = document.getElementById("four")
+    const five = document.getElementById("five")
+    const six = document.getElementById("six")
+    const custom = document.getElementById("custom")
+    const customRounds = document.getElementById("customRounds")
+    const guessed = document.getElementById("guess")
+    const hints = document.getElementById("hints")
+    const box = document.getElementById("rounds")
+    const button = document.getElementById("start")
+    const number = Math.floor(Math.random() * 100) + 1
+    console.log(number);
+    function showCustom() {
+        if (custom.checked) {
+            customRounds.style.display = "inline-block"
         } else {
-            text.innerHTML += `<h3>. You need to guess higher than .</h3>`
+            customRounds.style.display = "none"
         }
-
-})
-    //    x = Math.floor(Math.random() * 100);
-    //    console.log(x);
-    // {
-    //        x = Math.floor(Math.random() * 100);
-    //    console.log(x);
-       
-    //    for (let index = 1; index <= manyRunde(); index++) {
-    //     //    console.log(index);
-    //        roundMin.innerHTML = ++index;
-    //    }
-    // })
+    }
+    let i = 0
+    function game() {
+        let rounds
+        let guess = guessed.value
+        if (four.checked) {
+            rounds = 4
+        } else if (five.checked) {
+            rounds = 5
+        } else if (six.checked) {
+            rounds = 6
+        } else {
+            rounds = customRounds.value
+        }
+        if (i >= rounds - 1) {
+            i++
+            button.disabled = true
+            box.style.color = "red"
+            button.style.color = "red"
+            hints.style.color = "red"
+        } else {
+            i++
+        }
+        box.innerHTML = `<h2>${i}/${rounds}</h2>`
+        if (guess == number) {
+            button.disabled = true
+            button.style.color = "#0d8a0d"
+            hints.style.color = "#0a570a"
+            box.style.color = "#0d8a0d"
+            hints.innerHTML += `<h3>Congratulatios! You won after ${i} rounds. <a href="index.html">Play again!</a></h3>`
+        } else if (i >= rounds) {
+            hints.innerHTML += `<h3>Sorry, you lost. Your number was ${number}. <a href="index.html">Play again!</a></h3>`
+        } else if (guess > number) {
+            hints.innerHTML += `<h3>${i}. You need to guess lower than ${guess}.</h3>`
+        } else {
+            hints.innerHTML += `<h3>${i}. You need to guess higher than ${guess}.</h3>`
+        }
+    }
     
     

@@ -4,44 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NumberGuesser</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <section class="section">
-        <form action="" id="show" onclick="manyRunde()">
-            <p> WIE VIEL RUNDE WILLST DU SPILEN?</p>
-            <div class="radio1">
-                <input type="radio" id="four" name="runde" value="4" checked>
+    <h1>Number guessing game: 1-100</h1>
+    <article>
+        <form action="">
+            <h3>In how many rounds do you think you can guess the number?</h3>
+
+            <div id="rounds">
+                <input type="radio" name="rounds" id="four" checked onclick="showCustom()">
                 <label for="">4</label>
-                <input type="radio" id="five" name="runde" value="5">
+                <input type="radio" name="rounds" id="five" onclick="showCustom()">
                 <label for="">5</label>
-            </div>
-            <div class="radio2">
-                <input type="radio" id="six" name="runde" value="6">
+
+                <input type="radio" name="rounds" id="six" onclick="showCustom()">
                 <label for="">6</label>
-                <input type="radio" id="custom" name="runde" value="custom">
+                <input type="radio" name="rounds" id="custom" onclick="showCustom()">
                 <label for="">custom</label>
-                <input type="number" id="cust-number" max="100" min="7">
-                <!-- <input type="text" id="number"> -->
+
+                <input type="number" name="" id="customRounds">
             </div>
         </form>
-        <div id="rounds-result">
-            <p id="rounds-min">0</p>
-            <p>/</p>
-            <p id="rounds-max">0</p>
-        </div>
-        <article>
-            <div>
-                <input type="number" id="number" max="100" min="1">
-            </div>
-            <div>
-                <button id="result">GUESS</button>
-                <div id="text"></div>
-            </div>
-        </article>
-    </section>
+    </article>
+    <article>
+        <form action="">
+            <input type="number" name="" id="guess">
+            <input type="button" value="Guess" onclick="game()" id="start">
+        </form>
+    </article>
+    <div id="hints"></div>
 
     <script src="assets/js/main.js"></script>
 </body>
