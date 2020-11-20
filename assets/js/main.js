@@ -8,15 +8,36 @@
     const hints = document.getElementById("hints")
     const box = document.getElementById("rounds")
     const button = document.getElementById("start")
+    const rund = document.querySelector('.rund')
+    const rund2 = document.querySelector('.rund2')
     const number = Math.floor(Math.random() * 100) + 1
     console.log(number);
+    customRounds.style.display = "none"
     function showCustom() {
         if (custom.checked) {
             customRounds.style.display = "inline-block"
-            box.style.display = "none"
-        } else {
-            customRounds.style.display = "none"
+            rund.style.display="none"
+            rund2.style.display="none"
+            box.innerHTML = `<h2>0/0</h2>`
+            
+        }else if (four.checked) {
+            rounds = 4
+            customRounds.style.display = "inline-block"
+            rund2.style.display="none"
+            
+            box.innerHTML = `<h2>0/4</h2>`
+        } else if (five.checked) {
+            rounds = 5
+            rund2.style.display="none"
+            
+            box.innerHTML = `<h2>0/5</h2>`
+        } else if (six.checked) {
+            rounds = 6
+            rund2.style.display="none"
+            
+            box.innerHTML = `<h2>0/6</h2>`
         }
+         
     }
     let i = 0
     function game() {
@@ -24,10 +45,13 @@
         let guess = guessed.value
         if (four.checked) {
             rounds = 4
+            
         } else if (five.checked) {
             rounds = 5
+            
         } else if (six.checked) {
             rounds = 6
+            
         } else {
             rounds = customRounds.value
         }
